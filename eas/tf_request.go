@@ -143,6 +143,7 @@ type TFResponse struct {
 	Response tf_predict_protos.PredictResponse
 }
 
+/*
 // GetTensorShape returns []int64 slice as shape of tensor outindexed
 func (tresp *TFResponse) GetTensorShape(outputName string) []int64 {
 	// return tresp.PredictResponse.Outputs[outputName].ArrayShape.Dim
@@ -178,6 +179,7 @@ func (tresp *TFResponse) GetBoolVal(outputName string) []bool {
 func (tresp *TFResponse) GetStringVal(outputName string) [][]byte {
 	return tresp.Response.Outputs[outputName].GetStringVal()
 }
+*/
 
 // Unmarshal for interface
 func (tresp *TFResponse) unmarshal(body []byte) error {
