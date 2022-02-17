@@ -102,8 +102,16 @@ message PredictRequest {
   repeated string output_filter = 3;
 }
 
+message OutputEntry {
+  string key = 1;
+  ArrayProto value = 2;
+}
+
 // Response for PredictRequest on successful run.
 message PredictResponse {
   // Output tensors.
+  repeated OutputEntry outputs = 1;
+  /* @see https://developers.google.com/protocol-buffers/docs/proto3#backwards_compatibility
   map<string, ArrayProto> outputs = 1;
+  */
 }
